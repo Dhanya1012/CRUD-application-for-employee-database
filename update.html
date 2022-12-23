@@ -1,0 +1,54 @@
+{% extends 'design.html' %}
+{% include 'main.html' %}
+
+{% block title %} Add employee {% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <form action="" method="post">
+    <table class = "table">
+      <tr>
+        <td>First Name</td>
+        <td><input type="text" name="first_name" class="form-control" value="{{employee.first_name}}"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="last_name" class="form-control" value="{{employee.last_name}}"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" class="form-control" value="{{employee.email}}"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          Male:<input type="radio" name="gender" value="male"
+          {% if employee.gender=='male' %}
+          checked
+          {% endif %}
+          >
+          Female:<input type="radio" name="gender" value="female"
+          {% if employee.gender=='female' %}
+          checked
+          {% endif %}
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>salary</td>
+        <td><input type="text" name="salary" class="form-control" value="{{employee.salary}}"></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="submit" value="submit" class="btn btn-success">
+        </td>
+      </tr>
+    </table>
+
+  </form>
+
+</div>
+
+{% endblock %}
